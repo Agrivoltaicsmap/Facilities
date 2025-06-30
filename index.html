@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrivoltaic Facilities Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- Chart.js for graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- The div that will contain the map -->
+    <div id="map"></div>
+    
+    <!-- Custom zoom controls -->
+    <div class="zoom-controls">
+        <button id="zoom-in" title="Zoom in"><i class="fas fa-plus"></i></button>
+        <button id="zoom-out" title="Zoom out"><i class="fas fa-minus"></i></button>
+        <button id="reset-zoom" title="Reset zoom"><i class="fas fa-sync-alt"></i></button>
+    </div>
+
+    <div class="info-box">
+        <img src="ise.svg" alt="Logo" class="info-logo">
+        <div class="info-text">
+            <div class="info-line1" id="info-line1">Would you like to see your facility on our map?</div>
+            <div class="info-line2">
+                <a href="https://survey.ise.fhg.de/index.php/652155?lang=de" target="_blank" id="survey-link">Online survey</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Map Legend -->
+    <div class="map-legend">
+        <div class="legend-title" id="legend-title">Cultivation Types</div>
+        <div class="legend-items">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #FFDE85;"></div>
+                <div class="legend-label" id="legend-arable">Arable Farming</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #F6BC86;"></div>
+                <div class="legend-label" id="legend-horticulture">Horticulture</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #D4E293;"></div>
+                <div class="legend-label" id="legend-grassland">Grassland</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #a6bbc8;"></div>
+                <div class="legend-label" id="legend-other">Other</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="language-toggle-container">
+        <span class="lang-label">EN</span>
+        <label class="toggle-switch">
+            <input type="checkbox" id="language-switch">
+            <span class="slider"></span>
+        </label>
+        <span class="lang-label">DE</span>
+    </div>
+
+    <!-- Graphs button -->
+    <button class="graphs-button" id="graphs-toggle">
+        <i class="fas fa-chart-pie"></i> <span id="graphs-text">Graphs</span>
+    </button>
+    
+    <!-- Graphs sidebar -->
+    <div class="graphs-sidebar" id="graphs-sidebar">
+        <div class="panel-header">
+            <div class="panel-title" id="graphs-panel-title">Facility Graphs</div>
+            <div class="panel-controls">
+                <button class="close-button" id="close-graphs" title="Close graphs panel">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="graph-section">
+            <h3 id="cultivation-chart-title">Cultivation Types</h3>
+            <div class="chart-container">
+                <canvas id="cultivation-chart"></canvas>
+            </div>
+        </div>
+        
+        <div class="graph-section">
+            <h3 id="system-chart-title">System Types</h3>
+            <div class="chart-container">
+                <canvas id="system-chart"></canvas>
+            </div>
+        </div>
+        
+        <div class="graph-section">
+            <h3 id="capacity-chart-title">Cumulative Capacity Over Time</h3>
+            <div class="chart-container">
+                <canvas id="capacity-time-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Filter button -->
+    <button class="filter-button" id="filter-toggle">
+        <i class="fas fa-filter"></i> <span id="filter-text">Filter</span>
+    </button>
+    
+    <!-- Filter sidebar -->
+    <div class="filter-sidebar" id="filter-sidebar">
+        <div class="panel-header">
+            <div class="panel-title" id="filter-panel-title">Filter Facilities</div>
+            <div class="panel-controls">
+                <button class="reset-button" id="reset-filter" title="Reset all filters">
+                    <i class="fas fa-undo-alt"></i>
+                </button>
+                <button class="close-button" id="close-filter" title="Close filter panel">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results section -->
+        <div class="results-section">
+            <h3 id="current-selection-title">Current Selection</h3>
+            <div class="results-content">
+                <div class="result-item">
+                    <div class="result-value" id="total-facilities">0</div>
+                    <div class="result-label" id="facilities-label">Facilities</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-value" id="total-capacity">0</div>
+                    <div class="result-label" id="capacity-label">kWp Capacity</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-value" id="total-area">0</div>
+                    <div class="result-label" id="area-label">ha Area</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Numeric filters -->
+        <div class="filter-section">
+            <h3 id="capacity-filter-title">Capacity (kWp)</h3>
+            <div class="range-slider-container">
+                <input type="range" id="capacity-min" min="0" max="5000" value="0" class="range-slider">
+                <input type="range" id="capacity-max" min="0" max="5000" value="5000" class="range-slider">
+                <div class="range-slider-track"></div>
+                <div class="range-slider-range" id="capacity-range"></div>
+            </div>
+            <div class="range-values">
+                <span id="capacity-min-value">0</span>
+                <span id="capacity-max-value">5,000</span>
+            </div>
+        </div>
+        
+        <div class="filter-section">
+            <h3 id="area-filter-title">Area (ha)</h3>
+            <div class="range-slider-container">
+                <input type="range" id="area-min" min="0" max="50" value="0" class="range-slider">
+                <input type="range" id="area-max" min="0" max="50" value="50" class="range-slider">
+                <div class="range-slider-track"></div>
+                <div class="range-slider-range" id="area-range"></div>
+            </div>
+            <div class="range-values">
+                <span id="area-min-value">0</span>
+                <span id="area-max-value">50</span>
+            </div>
+        </div>
+
+        <!-- Year filter -->
+        <div class="filter-section">
+            <h3 id="year-filter-title">Year Established</h3>
+            <div class="year-slider-container">
+                <input type="range" id="year-min" min="2010" max="2025" value="2010" class="year-slider">
+                <input type="range" id="year-max" min="2010" max="2025" value="2025" class="year-slider">
+                <div class="year-slider-track"></div>
+                <div class="year-slider-range"></div>
+            </div>
+            <div class="range-values">
+                <span id="year-min-value">2010</span>
+                <span id="year-max-value">2025</span>
+            </div>
+        </div>
+
+        <!-- System Type filter -->
+        <div class="filter-section">
+            <h3 id="system-type-filter-title">System Type</h3>
+            <div class="checkbox-group two-columns" id="systemtypes-group">
+                <!-- System types will be added dynamically -->
+            </div>
+        </div>
+
+        <!-- Tracking filter -->
+        <div class="filter-section">
+            <h3 id="tracking-filter-title">Tracking</h3>
+            <div class="checkbox-group" id="trackingtypes-group">
+                <!-- Single tracking checkbox will be added dynamically -->
+            </div>
+        </div>
+        
+        <!-- Cultivation Type filter -->
+        <div class="filter-section">
+            <h3 id="cultivation-type-filter-title">Cultivation Type</h3>
+            <div class="checkbox-group two-columns" id="cultivationtypes-group">
+                <!-- Cultivation types will be added dynamically -->
+            </div>
+        </div>
+        
+        <!-- Crops filter -->
+        <div class="filter-section">
+            <h3 id="crops-filter-title">Crops</h3>
+            <div class="tag-filters" id="crops-group">
+                <!-- Crop tags will be added dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading indicator -->
+    <div id="loading-indicator" style="display: none;">
+        <div class="spinner"></div>
+        <div style="margin-top: 10px; text-align: center;">Loading map data...</div>
+    </div>
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
