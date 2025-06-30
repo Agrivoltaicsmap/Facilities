@@ -30,9 +30,9 @@ const facilitiesCSV = `Year,Facility Name,Organization,Capacity,Areafacility,Lat
 2024.0,Agri PV Kruse Energie gr.,Henning Kruse Energie,6600.0,,53.154666,8.55961,,Interspace,,,,,
 2024.0,Agri PV Kruse Energie kl.,"Henning Kruse Energie",3300.0,18.0,53.153878,8.562727,,Interspace,,,,,
 2020.0,"Our Common Future | Agri - Photovoltaik
-PiKE - Pflanzenbau im Zuge von Klimawandel und Energiewende","Hochschule für Technik, Wirtschaft und Kultur Leipzig ",0.4,0.23,51.31308,12.37276,"Garlic, Onion, Radish, Pea, Bush Bean",Overhead,Horticulture,No,,,
+PiKE - Pflanzenbau im Zuge von Klimawandel und Energiewende","Hochschule für Technik Wirtschaft und Kultur Leipzig",0.4,0.23,51.31308,12.37276,"Garlic, Onion, Radish, Pea, Bush Bean",Overhead,Horticulture,No,,,
 2020.0,"Our Common Future | Agri - Photovoltaik
-PiKE - Pflanzenbau im Zuge von Klimawandel und Energiewende","Hochschule für Technik, Wirtschaft und Kultur Leipzig ",0.4,0.0008,51.31308,12.37276,"Garlic, Onion, Radish, Pea, Bush Bean",Interspace,Horticulture,No,,,
+PiKE - Pflanzenbau im Zuge von Klimawandel und Energiewende","Hochschule für Technik Wirtschaft und Kultur Leipzig",0.4,0.0008,51.31308,12.37276,"Garlic, Onion, Radish, Pea, Bush Bean",Interspace,Horticulture,No,,,
 2023.0,VitiVoltaic HGU,Hochschule Geisenheim University,94.0,0.14,49.98673,7.9475,Riesling,Overhead,Viticulture,Yes,,,
 2024.0,Agri-PV Blankenhornsberg,"Intech GmbH & Co. KG",268.0,0.14,48.0506777401027,7.6225842015514,,Overhead,Viticulture,,Intech GmbH & Co. KG,https://nc.ise.fraunhofer.de/apps/photos/api/v1/preview/21114142?etag=303a354dd7e5c88a4e3f77aba82e8023&x=512&y=512,
 2020.0,Himbeere 8/I,"Josef Kneers (farmer), Burkhard Hesse (PV) - natürliche Person (ABR965597105654)",749.76,,51.585138,8.536989,"Blueberry, Raspberry, Strawberry, Apple, Grape",Overhead,,,,,
