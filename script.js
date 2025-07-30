@@ -18,12 +18,12 @@ const facilitiesCSV = `Year,Facility Name,Organization,Capacity,Areafacility,Lat
 2023,Forst-PV-Anlage,Emil Steidle GmbH &Co. KG,145.0,0.144,47.95667,9.17295,Fir,Overhead,Forstwirtschaft,No,,,
 2024,Oberhamberg BA II,"FinRo EP 17 GmbH & Co. KG Harald Eder",1612.26,,48.25478,12.40413,,,,,,,
 2022,Agri-PV-Anlage FZJ,Forschungszentrum Jülich,200.0,0.2,50.86334,6.53181,"Field Bean, Arnica, Dandelion",Overhead,Horticulture,No,Forschungszentrum Jülich,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/os9HJjzpzCoWomP?file=/&fileId=21637160&x=1920&y=1200&a=true&etag=89ec7d3920cf1a23da460f4c3ee31c32,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/iRAaakEqtf3e6SY?file=/&fileId=21637161&x=1920&y=1200&a=true&etag=2be0732dda01dcc110cd346fb59b02e4
-2016,Agri-PV Anlage Heggelbach,"Fraunhofer ISE, Farm community APV RESOLA Heggelbach, BayWa r.e., EWS Schönau",194.4,0.25,47.8537,9.1366,"Potato, Wheat, Celery, Clover, Sweet Corn, Field Bean, Triticale, Beetroot",Overhead,Arable Farming,No,Farm community APV RESOLA Heggelbach,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/PNs9nmE3sMNTtWp?file=/&fileId=21637141&x=1920&y=1200&a=true&etag=ad96d93c4411562d33cc928776460e76,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/w3NyK5xQcn7B3f4?file=/&fileId=21637149&x=1920&y=1200&a=true&etag=c3129295e2ac043e089ed87926e163a6
-2023,Agri-PV-Anlage KOB Bavendorf,"Fraunhofer ISE, Kompetenzzentrum Obstbau Bodensee, Technische Werke Schussental GmbH",227.0,0.38,47.767553,9.555375,Apple,Overhead,Horticulture,Yes,,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/EZKteW8Wqi8ZJbr?file=/&fileId=21637112&x=1920&y=1200&a=true&etag=97dbca8894f386a0ac5f02a79e3776e3,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/ZnMkffcYRGDzRQK?file=/&fileId=21637126&x=1920&y=1200&a=true&etag=6c391e621d9e3e638f96e9e08f403036
-2023,Krinner Agri-PV Hyperfarm,"Fraunhofer ISE, Krinner Carport GmbH, HOFF, HSWT + 9",302.4,0.6,48.82568,12.74059,"Potatoes, Wheat, Barley, Cabbage",Overhead,Arable Farming,Yes,,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/P5WDS8f8YNQmSoR?file=/&fileId=21637163&x=1920&y=1200&a=true&etag=273b9a6f619b3ccf98bdf999048bc1dd,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/PBCNTTczWeNK6xc?file=/&fileId=21637173&x=1920&y=1200&a=true&etag=66377a58e9a2f8b47669537d66fd42fd
+2016,Agri-PV Anlage Heggelbach,"Fraunhofer ISE, Farm community APV RESOLA Heggelbach, BayWa r.e., EWS Schönau",194.4,0.25,47.8537,9.1366,"Potato, Wheat, Celery, Clover, Sweet Corn, Field Bean, Triticale, Beetroot",Overhead,Arable Farming,No,APV RESOLA Heggelbach,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/PNs9nmE3sMNTtWp?file=/&fileId=21637141&x=1920&y=1200&a=true&etag=ad96d93c4411562d33cc928776460e76,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/w3NyK5xQcn7B3f4?file=/&fileId=21637149&x=1920&y=1200&a=true&etag=c3129295e2ac043e089ed87926e163a6
+2023,Agri-PV-Anlage KOB Bavendorf,"Fraunhofer ISE, Kompetenzzentrum Obstbau Bodensee, Technische Werke Schussental GmbH",227.0,0.38,47.767553,9.555375,Apple,Overhead,Horticulture,Yes,Fraunhofer ISE,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/EZKteW8Wqi8ZJbr?file=/&fileId=21637112&x=1920&y=1200&a=true&etag=97dbca8894f386a0ac5f02a79e3776e3,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/ZnMkffcYRGDzRQK?file=/&fileId=21637126&x=1920&y=1200&a=true&etag=6c391e621d9e3e638f96e9e08f403036
+2023,Krinner Agri-PV Hyperfarm,"Fraunhofer ISE, Krinner Carport GmbH, HOFF, HSWT + 9",302.4,0.6,48.82568,12.74059,"Potatoes, Wheat, Barley, Cabbage",Overhead,Arable Farming,Yes,"Fraunhofer ISE, Krinner Carport GmbH",https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/P5WDS8f8YNQmSoR?file=/&fileId=21637163&x=1920&y=1200&a=true&etag=273b9a6f619b3ccf98bdf999048bc1dd,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/PBCNTTczWeNK6xc?file=/&fileId=21637173&x=1920&y=1200&a=true&etag=66377a58e9a2f8b47669537d66fd42fd
 2023,Agri-PV-Anlage LTZ Augustenberg,"Fraunhofer ISE, LTZ Augustenberg",330.0,1.0,49.00368,8.49217,"Apple, Pear",Overhead,,Yes,LTZ Augustenberg,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/eCFQiKx99F2jRGo?file=/&fileId=21637053&x=1920&y=1200&a=true&etag=4cf198d2a6e2923fc2afe418d255d7fd,
-2022,,"Fraunhofer ISE, Obsthof Bernhard, Kompetenzzentrum Obstbau Bodensee, Regionalwerk Bodensee",240.0,0.4,47.60136,9.60401,"Apple",Overhead,Horticulture,No,,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/PFcJJBsLH7SMZT8?file=/&fileId=21637107&x=1920&y=1200&a=true&etag=694793a98dc544488f13940b2d55e944,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/ZnMkffcYRGDzRQK?file=/&fileId=21637126&x=1920&y=1200&a=true&etag=6c391e621d9e3e638f96e9e08f403036
-2023,,"Fraunhofer ISE, Obsthof Vollmer, LTZ Augustenberg, Intech GmbH",,,48.53837,8.01699,"Plum, Apple, Pear, Kiwi",Overhead,Horticulture,,,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/JH7bxJZqyfaSQri?file=/&fileId=21637056&x=1920&y=1200&a=true&etag=72d8c94fb5678e69ee4dc15e407f2f1f,
+2022,Obsthof Bernhard,"Fraunhofer ISE, Kompetenzzentrum Obstbau Bodensee, Regionalwerk Bodensee",240.0,0.4,47.60136,9.60401,"Apple",Overhead,Horticulture,No,Fraunhofer ISE,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/PFcJJBsLH7SMZT8?file=/&fileId=21637107&x=1920&y=1200&a=true&etag=694793a98dc544488f13940b2d55e944,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/ZnMkffcYRGDzRQK?file=/&fileId=21637126&x=1920&y=1200&a=true&etag=6c391e621d9e3e638f96e9e08f403036
+2023,LTZ Augustenberg,"Fraunhofer ISE, Obsthof Vollmer, LTZ Augustenberg, Intech GmbH",,,48.53837,8.01699,"Plum, Apple, Pear, Kiwi",Overhead,Horticulture,,Fraunhofer ISE,https://nc.ise.fraunhofer.de/apps/files_sharing/publicpreview/JH7bxJZqyfaSQri?file=/&fileId=21637056&x=1920&y=1200&a=true&etag=72d8c94fb5678e69ee4dc15e407f2f1f,
 2023,,"Gebr. Schwarz GmbH",356.82,,48.199189,8.708322,,,,,,,
 2023,PV Schulgarten/Hort,Gemeindeverwaltung Mittelherwigsdorf,3.7,,50.9165594358633,14.7585895607217,,Interspace,Horticulture,,,,
 2022,,Heide Energie Projekt GmbH & Co. KG,540.0,5.0,51.45827,11.17467,,Interspace,"Arable Farming, Grassland",No,,,
@@ -595,50 +595,87 @@ function createMarkersFromFacilities() {
 
 // Create popup content with copyright overlay
 function createPopupContent(facility) {
-    const systemTypesHtml = facility.system_types.length > 0 ? 
-        facility.system_types.map(type => getDataTranslation(type, 'system_type')).join(', ') : 
-        getUITranslation('notSpecified');
+    // Build information items only if data exists
+    let infoItems = [];
     
-    const cultivationTypesHtml = facility.cultivation_types.length > 0 ? 
-        facility.cultivation_types.map(type => getDataTranslation(type, 'cultivation_type')).join(', ') : 
-        getUITranslation('notSpecified');
+    // Always show name
+    infoItems.push(`<h3>${facility.name}</h3>`);
     
-    const cropTagsHtml = facility.crops.length > 0 ?
-        facility.crops.map(crop => 
+    // Add fields only if they have data
+    if (facility.year_established) {
+        infoItems.push(`<div class="info-row"><strong>${getUITranslation('yearEstablished')}:</strong> ${facility.year_established}</div>`);
+    }
+    
+    if (facility.organization) {
+        const organizationTranslated = getDataTranslation(facility.organization, 'organization');
+        infoItems.push(`<div class="info-row"><strong>${getUITranslation('organization')}:</strong> ${organizationTranslated}</div>`);
+    }
+    
+    if (facility.capacity > 0) {
+        infoItems.push(`<div class="info-row"><strong>${getUITranslation('capacity')}:</strong> ${facility.capacity.toLocaleString()} kWp</div>`);
+    }
+    
+    if (facility.area > 0) {
+        infoItems.push(`<div class="info-row"><strong>${getUITranslation('area')}:</strong> ${facility.area.toLocaleString()} ha</div>`);
+    }
+    
+    if (facility.system_types.length > 0) {
+        const systemTypesHtml = facility.system_types.map(type => getDataTranslation(type, 'system_type')).join(', ');
+        infoItems.push(`<div class="info-row"><strong>${getUITranslation('systemType')}:</strong> ${systemTypesHtml}</div>`);
+    }
+    
+    // Always show tracking (it's a boolean)
+    const trackingText = facility.has_tracking ? 
+        (currentLanguage === 'de' ? 'Ja' : 'Yes') : 
+        (currentLanguage === 'de' ? 'Nein' : 'No');
+    infoItems.push(`<div class="info-row"><strong>${getUITranslation('tracking')}:</strong> ${trackingText}</div>`);
+    
+    if (facility.cultivation_types.length > 0) {
+        const cultivationTypesHtml = facility.cultivation_types.map(type => getDataTranslation(type, 'cultivation_type')).join(', ');
+        infoItems.push(`<div class="info-row"><strong>${getUITranslation('cultivationType')}:</strong> ${cultivationTypesHtml}</div>`);
+    }
+    
+    if (facility.crops.length > 0) {
+        const cropTagsHtml = facility.crops.map(crop => 
             `<span class="crop-tag">${getDataTranslation(crop, 'crop')}</span>`
-        ).join('') : getUITranslation('notSpecified');
+        ).join('');
+        infoItems.push(`<div class="info-row"><strong>${getUITranslation('crops')}:</strong> <div class="crop-tags-container">${cropTagsHtml}</div></div>`);
+    }
     
-    const organizationTranslated = getDataTranslation(facility.organization, 'organization');
-    
-    // Handle images with copyright
-    const logoHtml = facility.logo ? 
-        `<img src="${facility.logo}" alt="Logo" style="width: 60px; height: 60px; object-fit: contain;">` :
-        `<div class="logo-placeholder"><i class="fas fa-image"></i></div>`;
-    
-    const imageHtml = facility.picture ? 
-        `<div style="position: relative;">
-            <img src="${facility.picture}" alt="Facility" style="width: 100%; height: 60px; object-fit: cover;">
-            ${facility.copyright ? `<div class="copyright-overlay">© ${facility.copyright}</div>` : ''}
-         </div>` :
-        `<div class="image-placeholder">${getUITranslation('facilityPhoto')}</div>`;
-
-    return `
-        <div class="facility-info">
-            <h3>${facility.name}</h3>
-            
-            <div class="facility-placeholders">
-                ${logoHtml}
-                ${imageHtml}
+    // Build images column only if there are images
+    let imagesHtml = '';
+    if (facility.logo || facility.picture) {
+        let imageItems = [];
+        
+        if (facility.logo) {
+            imageItems.push(`<img src="${facility.logo}" alt="Logo" class="popup-logo">`);
+        }
+        
+        if (facility.picture) {
+            imageItems.push(`
+                <div class="popup-image-container">
+                    <img src="${facility.picture}" alt="Facility" class="popup-image">
+                    ${facility.copyright ? `<div class="copyright-overlay">© ${facility.copyright}</div>` : ''}
+                </div>
+            `);
+        }
+        
+        imagesHtml = `
+            <div class="popup-images-column">
+                ${imageItems.join('')}
             </div>
-            
-            <p><strong>${getUITranslation('yearEstablished')}:</strong> ${facility.year_established || getUITranslation('notSpecified')}</p>
-            <p><strong>${getUITranslation('organization')}:</strong> ${organizationTranslated}</p>
-            <p><strong>${getUITranslation('capacity')}:</strong> ${facility.capacity.toLocaleString()} kWp</p>
-            <p><strong>${getUITranslation('area')}:</strong> ${facility.area > 0 ? facility.area.toLocaleString() + ' ha' : getUITranslation('notSpecified')}</p>
-            <p><strong>${getUITranslation('systemType')}:</strong> ${systemTypesHtml}</p>
-            <p><strong>${getUITranslation('tracking')}:</strong> ${facility.has_tracking ? 'Yes' : 'No'}</p>
-            <p><strong>${getUITranslation('cultivationType')}:</strong> ${cultivationTypesHtml}</p>
-            <p><strong>${getUITranslation('crops')}:</strong> ${cropTagsHtml}</p>
+        `;
+    }
+    
+    // Build the popup with conditional layout
+    const hasImages = facility.logo || facility.picture;
+    
+    return `
+        <div class="facility-popup ${hasImages ? 'has-images' : 'no-images'}">
+            <div class="popup-info-column">
+                ${infoItems.join('')}
+            </div>
+            ${imagesHtml}
         </div>
     `;
 }
